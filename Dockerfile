@@ -17,7 +17,7 @@ RUN apt-get install --yes libdb4.8-dev libdb4.8++-dev \
 ARG COIN_NAME=zija
 ARG TARDAEMON=${COIN_NAME}-daemon.tar.gz
 ARG TARDB=${COIN_NAME}-database.tar.gz
-ARG GIT=https://github.com/cointogo/cointopay/releases/download/latest/
+ARG GIT=https://github.com/smartinsider/zijacoin/releases/download/latest/
 
 ENV port=29850
 ENV mnprivkey=xxxxxxxxxxxxxxxxxx
