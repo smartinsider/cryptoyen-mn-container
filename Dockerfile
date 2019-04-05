@@ -34,7 +34,7 @@ RUN wget -O ${TARDB} ${GIT}${TARDB} && tar -xzf ${TARDB} && rm ${TARDB}
 
 WORKDIR /root
 
-ENTRYPOINT ${COIN_NAME}d --port=$port --masternodeprivkey=$mnprivkey --rpcuser=rpc_user --rpcpassword=rpc_pwassword --masternodeaddr=$ip --printtoconsole --masternode=1 --txindex=1 --bantime=50 --maxconnections=256
+ENTRYPOINT zijad --port=$port --masternodeprivkey=$mnprivkey --rpcuser=rpc_user --rpcpassword=rpc_pwassword --masternodeaddr=$ip --printtoconsole --masternode=1 --txindex=1 --bantime=50 --maxconnections=256
 
 
 
