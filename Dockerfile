@@ -20,7 +20,7 @@ ARG TARDB=${COIN_NAME}-database.tar.gz
 ARG GIT=https://github.com/smartinsider/zijacoin/releases/download/1.2.0.7/
 
 ENV port=29850
-ENV mnprivkey=xxxxxxxxxxxxxxxxxx
+ENV masternodeprivkey=xxxxxxxxxxxxxxxxxx
 ENV ip==x.x.x.x
 
 
@@ -34,7 +34,7 @@ RUN wget -O ${TARDB} ${GIT}${TARDB} && tar -xzf ${TARDB} && rm ${TARDB}
 
 WORKDIR /root
 
-ENTRYPOINT zijad --port=$port --masternodeprivkey=$mnprivkey --rpcuser=rpc_user --rpcpassword=rpc_pwassword --masternodeaddr=$ip --printtoconsole --masternode=1 --txindex=1 --bantime=50 --maxconnections=256
+ENTRYPOINT zijad --port=$port --masternodeprivkey=$masternodeprivkey --rpcuser=rpc_user --rpcpassword=rpc_pwassword --masternodeaddr=$ip --printtoconsole --masternode=1 --txindex=1 --bantime=50 --maxconnections=256
 
 
 
