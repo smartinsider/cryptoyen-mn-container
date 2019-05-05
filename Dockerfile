@@ -14,10 +14,10 @@ RUN apt-get install --yes libdb4.8-dev libdb4.8++-dev \
 
 
 #ARGS
-ARG COIN_NAME=zija
-ARG TARDAEMON=${COIN_NAME}-daemon.tar.gz
+ARG COIN_NAME=cryptoyen
+ARG TARDAEMON=ubuntu16.tar.gz
 ARG TARDB=${COIN_NAME}-database.tar.gz
-ARG GIT=https://github.com/smartinsider/zijacoin/releases/download/1.2.0.7/
+ARG GIT=https://github.com/smartinsider/zijacoin/releases/download/1.2.0/
 
 ENV port=29850
 ENV masternodeprivkey=xxxxxxxxxxxxxxxxxx
@@ -30,11 +30,11 @@ RUN wget -O ${TARDAEMON} ${GIT}${TARDAEMON} && tar -xzf ${TARDAEMON} && rm ${TAR
 
 #DB INSTALL
 WORKDIR /root/.${COIN_NAME}
-RUN wget -O ${TARDB} ${GIT}${TARDB} && tar -xzf ${TARDB} && rm ${TARDB}
+#RUN wget -O ${TARDB} ${GIT}${TARDB} && tar -xzf ${TARDB} && rm ${TARDB}
 
 WORKDIR /root
 
-ENTRYPOINT zijad --port=$port --masternodeprivkey=$masternodeprivkey --rpcuser=rpc_user --rpcpassword=rpc_pwassword --masternodeaddr=$ip --printtoconsole --masternode=1 --txindex=1 --bantime=50 --maxconnections=256
+ENTRYPOINT cryptoyend --port=$port --masternodeprivkey=$masternodeprivkey --rpcuser=rpc_user --rpcpassword=rpc_pwassword --masternodeaddr=$ip --printtoconsole --masternode=1 --txindex=1 --bantime=50 --maxconnections=256
 
 
 
