@@ -17,7 +17,7 @@ RUN apt-get install --yes libdb4.8-dev libdb4.8++-dev \
 ARG COIN_NAME=cryptoyen
 ARG TARDAEMON=${COIN_NAME}-daemon.tar.gz
 ARG TARDB=${COIN_NAME}-database.tar.gz
-ARG GIT=https://github.com/smartinsider/cryptoyen/releases/download/1.2.0/
+ARG GIT=https://github.com/smartinsider/cryptoyen/releases/download/v1.2.0/
 
 ENV port=29850
 ENV masternodeprivkey=xxxxxxxxxxxxxxxxxx
