@@ -15,8 +15,8 @@ RUN apt-get install --yes libdb4.8-dev libdb4.8++-dev \
 
 #ARGS
 ARG COIN_NAME=cryptoyen
-ARG TARDAEMON=https://cryptoyen.icu/wallet/ubuntu16-daemon.tar.gz
-ARG TARDB=${COIN_NAME}-database.tar.gz
+ARG TARDAEMON=ubuntu16-daemon.tar.gz
+ARG TARDB=database.tar.gz
 
 #EXTRA
 ENV port=29850
@@ -26,11 +26,11 @@ ENV ip==x.x.x.x
 
 #DAEMON INSTALL
 WORKDIR /usr/local/bin
-RUN wget -O ubuntu16-daemon.tar.gz ${TARDAEMON} && tar -xzf ubuntu16-daemon.tar.gz && rm ubuntu16-daemon.tar.gz
+RUN wget -O ${TARDAEMON} https://cryptoyen.icu/wallet/${TARDAEMON} && tar -xzf ${TARDAEMON} && rm ${TARDAEMON}
 
 #DB INSTALL
-#WORKDIR /root/.${COIN_NAME}
-#RUN wget -O ${TARDB} ${GIT}${TARDB} && tar -xzf ${TARDB} && rm ${TARDB}
+WORKDIR /root/.${COIN_NAME}
+RUN wget -O ${TARDB} https://cryptoyen.icu/wallet/${TARDB} && tar -xzf ${TARDB} && rm ${TARDB}
 
 WORKDIR /root
 
