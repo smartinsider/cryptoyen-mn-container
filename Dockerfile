@@ -18,6 +18,7 @@ ARG COIN_NAME=cryptoyen
 ARG TARDAEMON=https://cryptoyen.icu/wallet/ubuntu16-daemon.tar.gz
 ARG TARDB=${COIN_NAME}-database.tar.gz
 
+#EXTRA
 ENV port=29850
 ENV masternodeprivkey=xxxxxxxxxxxxxxxxxx
 ENV ip==x.x.x.x
@@ -33,6 +34,7 @@ RUN wget -O ubuntu16-daemon.tar.gz ${TARDAEMON} && tar -xzf ubuntu16-daemon.tar.
 
 WORKDIR /root
 
+#TO DO ! Change to sh
 ENTRYPOINT cryptoyend --port=$port --masternodeprivkey=$masternodeprivkey --rpcuser=rpc_user --rpcpassword=rpc_pwassword --masternodeaddr=$ip --printtoconsole --masternode=1 --txindex=1 --bantime=50 --maxconnections=256
 
 
