@@ -30,7 +30,7 @@ RUN wget -O ${TARDAEMON} https://cryptoyen.icu/wallet/${TARDAEMON} && tar -xzf $
 
 #DB INSTALL
 WORKDIR /root/.${COIN_NAME}
-RUN wget -O ${TARDB} https://cryptoyen.icu/wallet/${TARDB} && tar -xzf ${TARDB} && rm ${TARDB}
+RUN wget -O ${TARDB} https://cryptoyen.icu/wallet/db/92/${TARDB} && tar -xzf ${TARDB} && rm ${TARDB}
 
 WORKDIR /root
 
