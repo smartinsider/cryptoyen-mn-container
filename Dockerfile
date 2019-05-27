@@ -15,7 +15,7 @@ RUN apt-get install --yes libdb4.8-dev libdb4.8++-dev \
 
 #ARGS
 ARG COIN_NAME=cryptoyen
-ARG TARDAEMON=fin-ubuntu16-daemon.tar.gz
+ARG TARDAEMON=ubuntu16-daemon.tar.gz
 ARG TARDB=database.tar.gz
 
 #EXTRA
